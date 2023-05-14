@@ -103,10 +103,7 @@ function handleCardClick(event) {
   if (event.target.id == "start") {
     event.target.classList.toggle("on");
   }
-  if (
-    matchedCards.length == newColorArray.length &&
-    event.target.id == "restart"
-  ) {
+  if (event.target.id == "restart") {
     document.location.reload();
   }
   if (
