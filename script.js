@@ -24,11 +24,12 @@ function randomColorNumber() {
 function randomColor() {
   return COLORS[randomColorNumber()];
 }
-
+let numberOfPairs = randomCardNumber();
+console.log("Number of Pairs " + numberOfPairs);
 function randomColorArray() {
   let newColorArray = [];
-  let numberOfCards = randomCardNumber();
-  for (i = 0; i < numberOfCards; i++) {
+
+  for (i = 0; i < numberOfPairs; i++) {
     let color = randomColor();
     console.log(color);
     newColorArray.push(color);
@@ -91,9 +92,13 @@ startButton.addEventListener("click", handleCardClick);
 let restartButton = document.getElementById("restart");
 restartButton.addEventListener("click", handleCardClick);
 let score = 0;
-let highScore = localStorage.highScore || 0;
+let highScore4 = localStorage.highScore4 || 0;
+let highScore8 = localStorage.highScore8 || 0;
+let highScore12 = localStorage.highScore12 || 0;
 document.querySelector("#score").innerHTML = score;
-document.querySelector("#highScore").innerHTML = highScore;
+document.querySelector("#highScore4").innerHTML = highScore4;
+document.querySelector("#highScore8").innerHTML = highScore8;
+document.querySelector("#highScore12").innerHTML = highScore12;
 
 // TODO: Implement this function!
 function handleCardClick(event) {
@@ -156,10 +161,26 @@ function handleCardClick(event) {
   }
   if (matchedCards.length == newColorArray.length) {
     console.log("You completed the game in " + score + " moves");
-    if (highScore == 0 || score < highScore) {
-      document.querySelector("#highScore").innerHTML = score;
-      highScore = score;
-      localStorage.setItem("highScore", score);
+    if (numberOfPairs == 2) {
+      if (highScore4 == 0 || score < highScore4) {
+        document.querySelector("#highScore4").innerHTML = score;
+        highScore = score;
+        localStorage.setItem("highScore4", score);
+      }
+    }
+    if (numberOfPairs == 4) {
+      if (highScore8 == 0 || score < highScore8) {
+        document.querySelector("#highScore8").innerHTML = score;
+        highScore = score;
+        localStorage.setItem("highScore8", score);
+      }
+    }
+    if (numberOfPairs == 6) {
+      if (highScore12 == 0 || score < highScore12) {
+        document.querySelector("#highScore12").innerHTML = score;
+        highScore = score;
+        localStorage.setItem("highScore12", score);
+      }
     }
   }
 }
