@@ -14,7 +14,7 @@ const COLORS = [
 ];
 
 function randomCardNumber() {
-  return Math.floor(Math.random() * 5) * 2 + 2;
+  return Math.floor(Math.random() * 3) * 2 + 2;
 }
 
 function randomColorNumber() {

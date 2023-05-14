@@ -2,7 +2,7 @@
   border: 1px solid black;
   width: 15%;
   height: 200px;
-  margin: 10px;
+  margin: 30px;
   display: inline-block;
 }
 
@@ -11,4 +11,24 @@
 }
 button {
   margin: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: coral;
+  font-size: 55px;
+}
+
+#gameButtons {
+  text-align: center;
+}
+
+#game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+body {
+  background-color: aquamarine;
 }
